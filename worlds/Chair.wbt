@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 1 0 0 4.71238898038469
-  position 0 1.5444518461219168 -1.2210911144279057e-16
+  orientation 0.7772244563796294 0.6291692495235531 -0.008258320613696813 0.03377275632725976
+  position -0.11070000313832068 0.37003192646388333 1.7277761866726173
 }
 TexturedBackground {
 }
@@ -12,26 +12,9 @@ TexturedBackgroundLight {
 Floor {
 }
 Solid {
-  translation 0 0.35 0
-  children [
-    Shape {
-      appearance PBRAppearance {
-        transparency 1
-        metalness 0
-      }
-      geometry Box {
-        size 0.4 0.7 0.4
-      }
-    }
-  ]
-  boundingObject Box {
-    size 0.4 0.7 0.4
-  }
-}
-Solid {
   translation 0 0.025 0
   children [
-    DEF GR_OBJECT Group {
+    DEF GR_CHAIR Group {
       children [
         Shape {
           appearance DEF A_SIT PBRAppearance {
@@ -46,97 +29,146 @@ Solid {
         }
         Transform {
           translation 0 0.0375 -0.0625
-          rotation 1 0 0 0
           children [
-            Group {
-              children [
-                Shape {
-                  appearance DEF A_1 PBRAppearance {
-                    baseColor 0.3333333333333333 0.3411764705882353 0.3254901960784314
-                  }
-                  geometry DEF G_1_1 Box {
-                    size 0.15 0.025 0.025
-                  }
-                }
-                Transform {
-                  translation 0 0 0.125
-                  children [
-                    Shape {
-                      appearance USE A_1
-                      geometry USE G_1_1
-                    }
-                  ]
-                }
-                Transform {
-                  translation 0.0625 0 0.0625
-                  children [
-                    Shape {
-                      appearance USE A_1
-                      geometry DEF G_1_2 Box {
-                        size 0.024999999999999998 0.025 0.1
-                      }
-                    }
-                  ]
-                }
-                Transform {
-                  translation -0.0625 0 0.0625
-                  children [
-                    Shape {
-                      appearance USE A_1
-                      geometry USE G_1_2
-                    }
-                  ]
-                }
-              ]
+            Shape {
+              appearance DEF A_1 PBRAppearance {
+                baseColor 0.3333333333333333 0.3411764705882353 0.3254901960784314
+              }
+              geometry DEF G_1_1 Box {
+                size 0.15 0.025 0.025
+              }
             }
           ]
         }
         Transform {
-          translation 0 0.2 -0.1275
+          translation 0 0.0375 0.0625
           children [
-            Group {
-              children [
-                Shape {
-                  appearance USE A_1
-                  geometry DEF G_2_1 Box {
-                    size 0.28 0.025 0.025
-                  }
-                }
-                Transform {
-                  translation 0 0 0.255
-                  children [
-                    Shape {
-                      appearance USE A_1
-                      geometry USE G_2_1
-                    }
-                  ]
-                }
-                Transform {
-                  translation 0.1275 0 0.1275
-                  children [
-                    Shape {
-                      appearance USE A_1
-                      geometry DEF G_2_2 Box {
-                        size 0.025 0.025 0.23
-                      }
-                    }
-                  ]
-                }
-                Transform {
-                  translation -0.1275 0 0.1275
-                  children [
-                    Shape {
-                      appearance USE A_1
-                      geometry USE G_2_2
-                    }
-                  ]
-                }
-              ]
+            Shape {
+              appearance USE A_1
+              geometry USE G_1_1
             }
           ]
+        }
+        Transform {
+          translation 0.0625 0.0375 0
+          children [
+            Shape {
+              appearance USE A_1
+              geometry DEF G_1_2 Box {
+                size 0.025 0.025 0.1
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -0.0625 0.037500000000000006 0
+          children [
+            Shape {
+              appearance USE A_1
+              geometry USE G_1_2
+            }
+          ]
+        }
+        Transform {
+          translation 0 0.2 0.125
+          children [
+            Shape {
+              appearance USE A_1
+              geometry DEF G_2_1 Box {
+                size 0.28 0.025 0.025
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0.2 -0.125
+          children [
+            Shape {
+              appearance USE A_1
+              geometry USE G_2_1
+            }
+          ]
+        }
+        Transform {
+          translation 0.128 0.2 0
+          children [
+            Shape {
+              appearance USE A_1
+              geometry DEF G_2_2 Box {
+                size 0.025 0.025 0.23
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -0.128 0.2 0
+          children [
+            Shape {
+              appearance USE A_1
+              geometry USE G_2_2
+            }
+          ]
+        }
+        Transform {
+          translation -0.1107 0.3450319222515259 0.11054
+          rotation 0.7071067811865475 0 0.7071067811865475 16.035
+          children [
+            Shape {
+              appearance DEF A_2 PBRAppearance {
+                baseColor 0.9607843137254902 0.4745098039215686 0
+              }
+              geometry DEF G_4 Cylinder {
+                height 0.67
+                radius 0.01
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.181 0.656 0.181
+          children [
+            Shape {
+              appearance DEF A_3 PBRAppearance {
+                baseColor 0.9372549019607843 0.1607843137254902 0.1607843137254902
+              }
+              geometry DEF G_3 Sphere {
+                radius 0.02
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.181 0.656 -0.181
+          children [
+            Shape {
+              appearance USE A_3
+              geometry USE G_3
+            }
+          ]
+        }
+        Transform {
+          translation -0.181 0.656 0.181
+          children [
+            Shape {
+              appearance USE A_3
+              geometry USE G_3
+            }
+          ]
+        }
+        Transform {
+          translation -0.181 0.656 -0.181
+          children [
+            Shape {
+              appearance USE A_3
+              geometry USE G_3
+            }
+          ]
+        }
+        Transform {
         }
       ]
     }
   ]
   name "solid(1)"
+  boundingObject USE GR_CHAIR
 }
