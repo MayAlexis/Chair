@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.7772244563796294 0.6291692495235531 -0.008258320613696813 0.03377275632725976
-  position -0.11070000313832068 0.37003192646388333 1.7277761866726173
+  orientation 0.059875507166262935 -0.9869376043420928 -0.14956299267223003 3.8941550424550186
+  position 0.5029805744028403 0.3771405489063839 -0.15373587444953368
 }
 TexturedBackground {
 }
@@ -70,7 +70,7 @@ Solid {
           ]
         }
         Transform {
-          translation 0 0.2 0.125
+          translation 0 0.3 0.125
           children [
             Shape {
               appearance USE A_1
@@ -81,7 +81,7 @@ Solid {
           ]
         }
         Transform {
-          translation 0 0.2 -0.125
+          translation 0 0.3 -0.125
           children [
             Shape {
               appearance USE A_1
@@ -90,7 +90,7 @@ Solid {
           ]
         }
         Transform {
-          translation 0.128 0.2 0
+          translation 0.128 0.3 0
           children [
             Shape {
               appearance USE A_1
@@ -101,7 +101,7 @@ Solid {
           ]
         }
         Transform {
-          translation -0.128 0.2 0
+          translation -0.128 0.3 0
           children [
             Shape {
               appearance USE A_1
@@ -165,10 +165,40 @@ Solid {
           ]
         }
         Transform {
+          translation 0.1107 0.345032 -0.11054
+          rotation -0.710615085249329 0 -0.7035809836941933 16.035
+          children [
+            Shape {
+              appearance USE A_2
+              geometry USE G_4
+            }
+          ]
+        }
+        Transform {
+          translation 0.1107 0.345032 0.11054
+          rotation 0.7071067811865476 0 -0.7071067811865476 16.035
+          children [
+            Shape {
+              appearance USE A_2
+              geometry USE G_4
+            }
+          ]
+        }
+        Transform {
+          translation -0.10149999999999999 0.346 -0.108
+          rotation -0.6808896978073596 -0.2849575908101938 0.6746765083056121 31.75
+          children [
+            Shape {
+              appearance USE A_2
+              geometry USE G_4
+            }
+          ]
         }
       ]
     }
   ]
   name "solid(1)"
   boundingObject USE GR_CHAIR
+  physics Physics {
+  }
 }
