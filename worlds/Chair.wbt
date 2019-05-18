@@ -2,12 +2,141 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.6931032800836722 0.6931032800836722 0.1980295085953349 0.75
-  position 1.2 1.6 2.3
+  orientation 1 0 0 4.71238898038469
+  position 0 1.5444518461219168 -1.2210911144279057e-16
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
 Floor {
+}
+Solid {
+  translation 0 0.35 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        transparency 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.4 0.7 0.4
+      }
+    }
+  ]
+  boundingObject Box {
+    size 0.4 0.7 0.4
+  }
+}
+Solid {
+  translation 0 0.025 0
+  children [
+    DEF GR_OBJECT Group {
+      children [
+        Shape {
+          appearance DEF A_SIT PBRAppearance {
+            baseColor 0.5607843137254902 0.34901960784313724 0.00784313725490196
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.049999999999999996
+            radius 0.15
+          }
+        }
+        Transform {
+          translation 0 0.0375 -0.0625
+          rotation 1 0 0 0
+          children [
+            Group {
+              children [
+                Shape {
+                  appearance DEF A_1 PBRAppearance {
+                    baseColor 0.3333333333333333 0.3411764705882353 0.3254901960784314
+                  }
+                  geometry DEF G_1_1 Box {
+                    size 0.15 0.025 0.025
+                  }
+                }
+                Transform {
+                  translation 0 0 0.125
+                  children [
+                    Shape {
+                      appearance USE A_1
+                      geometry USE G_1_1
+                    }
+                  ]
+                }
+                Transform {
+                  translation 0.0625 0 0.0625
+                  children [
+                    Shape {
+                      appearance USE A_1
+                      geometry DEF G_1_2 Box {
+                        size 0.024999999999999998 0.025 0.1
+                      }
+                    }
+                  ]
+                }
+                Transform {
+                  translation -0.0625 0 0.0625
+                  children [
+                    Shape {
+                      appearance USE A_1
+                      geometry USE G_1_2
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+        Transform {
+          translation 0 0.2 -0.1275
+          children [
+            Group {
+              children [
+                Shape {
+                  appearance USE A_1
+                  geometry DEF G_2_1 Box {
+                    size 0.28 0.025 0.025
+                  }
+                }
+                Transform {
+                  translation 0 0 0.255
+                  children [
+                    Shape {
+                      appearance USE A_1
+                      geometry USE G_2_1
+                    }
+                  ]
+                }
+                Transform {
+                  translation 0.1275 0 0.1275
+                  children [
+                    Shape {
+                      appearance USE A_1
+                      geometry DEF G_2_2 Box {
+                        size 0.025 0.025 0.23
+                      }
+                    }
+                  ]
+                }
+                Transform {
+                  translation -0.1275 0 0.1275
+                  children [
+                    Shape {
+                      appearance USE A_1
+                      geometry USE G_2_2
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  name "solid(1)"
 }
